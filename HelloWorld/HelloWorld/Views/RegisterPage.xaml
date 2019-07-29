@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.Views.RegisterPage"
+             xmlns:viewModels="clr-namespace:HelloWorld.ViewModels">
+
+    <ContentPage.BindingContext>
+        <viewModels:RegisterViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="20" Spacing="30" Padding="30">
+
+            <Entry Placeholder="Full Name" Text="{Binding FullName}" />
+
+            <Entry Placeholder="Username" Text="{Binding UserName}" />
+
+            <Entry Placeholder="Email Address" Keyboard="Email" Text="{Binding Email}" />
+
+            <Entry Placeholder="Phone Number" Keyboard="Numeric" Text="{Binding PhoneNumber}" />
+
+            <Entry Placeholder="Password" Keyboard="Default" IsPassword="True" Text="{Binding Password}" />
+
+            <Entry Placeholder="Confirm Password" IsPassword="True" Text="{Binding ConfirmPassword}" />
+
+            <Button Text="Register" Margin="0, 50, 0, 0" Command="{Binding RegisterCommand}" TextColor="White" BackgroundColor="Crimson" FontSize="30"/>
+
+            <Button x:Name="BtnGoToLogin" Text="GoTo Login" Clicked="BtnGoToLogin_Clicked" HorizontalOptions="End" />
+
+            <Label Text="{Binding Message}"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

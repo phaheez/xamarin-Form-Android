@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.RegisterPage">
+    <StackLayout VerticalOptions="Center" Margin="20">
+        <Entry x:Name="txtEmail" Placeholder="Email Address" Keyboard="Email" Text="Text" TextColor="{StaticResource blueColor}" />
+
+        <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" Text="password" TextColor="{StaticResource blueColor}" />
+
+        <Entry x:Name="txtConfirmPassword" Placeholder="Confirm Password" IsPassword="True" Text="password" TextColor="{StaticResource blueColor}" />
+
+        <Button x:Name="BtnRegister" Text="Register" Margin="0, 50, 0, 0" Clicked="BtnRegister_Clicked" Style="{StaticResource normalButton}"/>
+    </StackLayout>
+</ContentPage>

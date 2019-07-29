@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HelloWorld"
+             x:Class="HelloWorld.Views.LoginPage">
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Margin="20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image x:Name="iconImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand" HeightRequest="70" VerticalOptions="End" />
+
+                <Entry x:Name="txtEmail" Grid.Row="1" Placeholder="Email Address" PlaceholderColor="#bababa" Keyboard="Email" TextColor="Black" FontSize="16" />
+
+                <Entry x:Name="txtPassword" Grid.Row="2" Placeholder="Password" PlaceholderColor="#bababa" IsPassword="True" TextColor="Black" FontSize="16" />
+
+                <Button x:Name="BtnLogin" Grid.Row="3" Text="Log In" HeightRequest="40" Margin="0, 20, 0, 0" Style="{StaticResource normalButton}" Clicked="BtnLogin_Clicked"/>
+
+                <Label Grid.Row="4" Text="Login Trouble? Get help signing in." HorizontalOptions="Center" Margin="0, 10, 0, 0" FontSize="12"/>
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Label Text="OR" Grid.Column="1" Margin="10,0" VerticalOptions="Center"/>
+                    <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Grid.Row="6">
+                    <!--<Image Source="facebook.png"/>-->
+                    <Label Text="Log In With Facebook" TextColor="#485992"/>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="2" BackgroundColor="White">
+                <Label HeightRequest="1" BackgroundColor="#E3E3E3"/>
+
+                <Button x:Name="BtnSignUp" Clicked="BtnSignUp_Clicked" Text="Don't have an account? Sign up." VerticalOptions="FillAndExpand" BackgroundColor="Transparent" TextColor="#bababa"/>
+
+                <!--<Label x:Name="lblSignUp" Text="Don't have an account? Sign up." VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>-->
+            </StackLayout>
+
+            <ActivityIndicator Color="Orange" x:Name="loader" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center" />
+            
+            <!--<Grid Opacity=".8" BackgroundColor="Black" IsVisible="{Binding IsBusy}">
+                <ActivityIndicator x:Name="loader" IsRunning="{Binding IsBusy}" VerticalOptions="Center" HorizontalOptions="Center" />
+            </Grid>-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
